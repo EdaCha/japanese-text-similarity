@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ja" xmlns:v-bind="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Text Similarity</title>
+</head>
+<body>
+<script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+<script src="./js/kuromoji.min.js"></script>
+<h1>Text Similarity</h1>
+<p>Calculates tf-idf similarity between documents in Japanese</p>
+<div id="tool">
+    <div>
+        <textarea cols="80" rows="20" placeholder="Input text here" v-model="inputText1"></textarea>
+    </div>
+    <div>
+        <textarea cols="80" rows="20" placeholder="Input text here" v-model="inputText2"></textarea>
+    </div>
+    <div>
+        <button @click="execute" v-bind:disabled="isLoading" v-text="buttonText" style="padding: 0.5em 4em;">Execute</button>
+    </div>
+    <div>
+        <p v-text="result"></p>
+    </div>
+</div>
+
+<script src="./js/similarity.js"></script>
+
+</body>
+</html>
